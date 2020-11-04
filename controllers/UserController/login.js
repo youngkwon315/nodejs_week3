@@ -18,7 +18,6 @@ const login = async (req, res) => {
     const token = jwt.sign({ id }, "secret_key", {
       expiresIn: "1h",
     });
-    // localStorage.setItem("token", token);
     res.status(200).json({ message: "login success", token });
   } catch (err) {
     res.status(400).json({ message: err.message });

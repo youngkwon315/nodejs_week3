@@ -3,9 +3,9 @@ const router = express.Router();
 
 const ArticleController = require("../../controllers/index");
 
-router.get("/", ArticleController.readArticle);
+router.get("/:id", ArticleController.readArticle);
 router.post("/", ArticleController.createArticle);
-router.put("/", ArticleController.updateArticle);
-router.delete("/", ArticleController.deleteArticle);
+router.patch("/:id", ArticleController.updateArticle);
+router.delete("/:id", ArticleController.deleteArticle);
 
 module.exports = router;
